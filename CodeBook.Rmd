@@ -23,14 +23,14 @@ Absolute magnitudes (Mag) for all of the above.
 Paragraph numbers below correspond to comment numbers in the run_analysis.R script.
 
 1. The necessary eight data files were downloaded and read into data frames:
-activities from activity_labels.txt
-features from features.txt (column names)
-subject_test from subject_test.txt
-subject_train from subject_train.txt
-x_test from X_test.txt (features)
-x_train from X_train.txt (features)
-y_test from y_test.txt (activity type)
-y_train from y_train.txt (activity type)
+activities from activity_labels.txt, 
+features from features.txt (column names), 
+subject_test from subject_test.txt, 
+subject_train from subject_train.txt, 
+x_test from X_test.txt (features), 
+x_train from X_train.txt (features), 
+y_test from y_test.txt (activity type), 
+y_train from y_train.txt (activity type), 
 
 2. Unnecessary first columns were removed from activities and features.
 
