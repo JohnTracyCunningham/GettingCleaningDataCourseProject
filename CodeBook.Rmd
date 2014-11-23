@@ -36,7 +36,9 @@ y_train from y_train.txt (activity type)
 
 3. For each of subject, x, and y, the training and test files were combined.
 
-4 and 5. To replace the activity numbers in "y" with descriptive text, the activities data frame was reduced to lower case.  Underscores were retained.  Then the substitution was performed, resulting in a "y" data frame with only descriptive activity text.
+4. To replace the activity numbers in "y" with descriptive text, the activities data frame was reduced to lower case.  Underscores were retained.  
+
+5. Then the substitution was performed, resulting in a "y" data frame with only descriptive activity text.
 
 6. subject, y, and x were combined into a single har data frame.
 
