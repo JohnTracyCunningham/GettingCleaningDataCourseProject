@@ -1,0 +1,18 @@
+---
+title: "README"
+author: "John Tracy Cunningham"
+date: "23 November 2014"
+output: html_document
+---
+
+This is the README file for the Course Project of Getting and Cleaning Data, Johns Hopkins Specialization in Data Science on Coursera.
+
+The Course Project deliverables are (1) a run_analysis.R script that processes provided data into a tidy data set; (2) a tidy data set tidy_HAR.txt; and (3) a CodeBook.Rmd file that describes the original data, what it means, and how it was transformed into a tidy data set.
+
+To use the script:
+
+1. Unzip the provided archive, "getdata-projectfiles-UCI HAR Dataset.zip".
+2. Copy these eight files from the unzipped archive into your working directory: (1) activity_labels.txt; (2) features.txt; (3) subject_test.txt; (4) X_test.txt; (5) y_test.txt; (6) subject_train.txt; (7) X_train.txt; and (8) y_train.txt.
+3. Run the script.  It produces two output files: (1) a tidy data set tidy_har; and (2) a text version of the first file, tidy_har.txt.  To read the .txt version of the file easily, put the file in your working directory and execute: data <- read.table("tidy_har.txt", header=TRUE).  Then view the "data" object.
+
+End of README

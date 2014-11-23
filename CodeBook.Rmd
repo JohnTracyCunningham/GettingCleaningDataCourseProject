@@ -1,0 +1,63 @@
+---
+title: "CodeBook"
+author: "John Tracy Cunningham"
+date: "23 November 2014"
+output: html_document
+---
+
+This CodeBook lays out all the steps of transforming the HAR data set into its final desired form.
+
+The original raw data was read from the accelerometers and gyroscopes installed in Samsung Galaxy S II smartphones worn on the wastes of 30 test subjects while performing many repetitions of six difference movements: laying, sitting, standing, walking, walking downstairs, and walking upstairs.
+
+Sampling of raw data was performed 50 times per second during each observation.  These data were then combined into 2.56-second windows (128 observations per window) with 50% overlap.  The raw data in each window was then used to calculate 561 measures of interest or "features".
+
+The features are identified as follows:
+- First character "t" for time domain and "f" for frequency domain.
+- Acc: Acceleration in all three axes.
+- Gravity: Acceleration of gravity in all three axes.
+- Jerk: Jerkiness (first derivative of acceleration) in all three axes.
+- Similarly for the Gyro.
+- Absolute magnitudes (Mag) for all of the above.
+- "mean" for window means and "std" for standard deviations.  Other variables were eliminated as part of this project.
+
+Paragraph numbers below correspond to comment numbers in the run_analysis.R script.
+
+1. The necessary eight data files were downloaded and read into data frames:
+- activities from activity_labels.txt
+- features from features.txt (column names)
+- subject_test from subject_test.txt
+- subject_train from subject_train.txt
+- x_test from X_test.txt (features)
+- x_train from X_train.txt (features)
+- y_test from y_test.txt (activity type)
+- y_train from y_train.txt (activity type)
+
+2. Unnecessary first columns were removed from activities and features.
+
+3. For each of subject, x, and y, the training and test files were combined.
+
+4 and 5. To replace the activity numbers in "y" with descriptive text, the activities data frame was reduced to lower case.  Underscores were retained.  Then the substitution was performed, resulting in a "y" data frame with only descriptive activity text.
+
+6. subject, y, and x were combined into a single har data frame.
+
+7. "subject", "activity", and the 561 elements of the features data frame were added to har as column names.
+
+8. Duplicate columns (identified by duplicate column names) were eliminated.  This was necessary before the next step, which would not have worked otherwise.
+
+9. The dplyr package was loaded, and only those columns with "subject", "activity", "mean", or "std" in their names were retained, as required by the project objectives.
+
+10. Column names were cleaned up by eliminating parentheses, changing hyphens to underscores, and eliminating "Body" because it appeared in all column names.
+
+11. har was sorted by subject and activity.  This was perhaps not necessary.
+
+12. The data.table package was loaded, and har was converted to the data table hardt.
+
+13. Finally, hardt was grouped by subject and activity, and the mean of each column in each group was taken, again as required by the project objectives.  The result was output as har_final.
+
+14. The desired output file tidy_har.txt was then written from har_final.
+
+tidy_har.txt may be easily read by copying it into your working directory and executive:
+
+data <- read.table("tidy_har.txt", header = TRUE)
+
+The data can then be viewed in a neat form of 180 rows and 81 columns (30 subjects times 6 activities, with 79 mean and std variables reduced to means, with two identifying columns).
