@@ -7,7 +7,7 @@ output: html_document
 
 This CodeBook lays out all the steps of transforming the HAR data set into its final desired form.
 
-The original raw data was read from the accelerometers and gyroscopes installed in Samsung Galaxy S II smartphones worn on the wastes of 30 test subjects while performing many repetitions of six difference movements: laying, sitting, standing, walking, walking downstairs, and walking upstairs.
+The original raw data was read from the accelerometers and gyroscopes installed in Samsung Galaxy S II smartphones worn on the wastes of 30 test subjects while performing many repetitions of six different movements: laying, sitting, standing, walking, walking downstairs, and walking upstairs.
 
 Sampling of raw data was performed 50 times per second during each observation.  These data were then combined into 2.56-second windows (128 observations per window) with 50% overlap.  The raw data in each window was then used to calculate 561 measures of interest or "features".
 
