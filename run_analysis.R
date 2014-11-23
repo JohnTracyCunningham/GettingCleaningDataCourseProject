@@ -77,4 +77,4 @@ har_final <- hardt[, lapply(.SD, mean), by = list(subject, activity)]
 
 #14. Write har_final out to tidy_har.txt.
 
-write.table(har_final, "tidy_har.txt", row.name = FALSE)
+write.table(har_final, "tidy_har.txt", row.names = FALSE)
