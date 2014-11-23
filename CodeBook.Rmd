@@ -12,25 +12,25 @@ The original raw data was read from the accelerometers and gyroscopes installed 
 Sampling of raw data was performed 50 times per second during each observation.  These data were then combined into 2.56-second windows (128 observations per window) with 50% overlap.  The raw data in each window was then used to calculate 561 measures of interest or "features".
 
 The features are identified as follows:
-- First character "t" for time domain and "f" for frequency domain.
-- Acc: Acceleration in all three axes.
-- Gravity: Acceleration of gravity in all three axes.
-- Jerk: Jerkiness (first derivative of acceleration) in all three axes.
-- Similarly for the Gyro.
-- Absolute magnitudes (Mag) for all of the above.
-- "mean" for window means and "std" for standard deviations.  Other variables were eliminated as part of this project.
+First character "t" for time domain and "f" for frequency domain.
+Acc: Acceleration in all three axes.
+Gravity: Acceleration of gravity in all three axes.
+Jerk: Jerkiness (first derivative of acceleration) in all three axes.
+Similarly for the Gyro.
+Absolute magnitudes (Mag) for all of the above.
+"mean" for window means and "std" for standard deviations.  Other variables were eliminated as part of this project.
 
 Paragraph numbers below correspond to comment numbers in the run_analysis.R script.
 
 1. The necessary eight data files were downloaded and read into data frames:
-- activities from activity_labels.txt
-- features from features.txt (column names)
-- subject_test from subject_test.txt
-- subject_train from subject_train.txt
-- x_test from X_test.txt (features)
-- x_train from X_train.txt (features)
-- y_test from y_test.txt (activity type)
-- y_train from y_train.txt (activity type)
+activities from activity_labels.txt
+features from features.txt (column names)
+subject_test from subject_test.txt
+subject_train from subject_train.txt
+x_test from X_test.txt (features)
+x_train from X_train.txt (features)
+y_test from y_test.txt (activity type)
+y_train from y_train.txt (activity type)
 
 2. Unnecessary first columns were removed from activities and features.
 
