@@ -33,7 +33,7 @@ activities[, 1] <- tolower(activities[, 1])
 ## Then eliminate the redundant first column in "y", leaving a column of text.
 
 y$text <- ""
-for(n in 1:6) y$text[y[, 1] == n] <- activities[, n]
+for(n in 1:6) y$text[y[, 1] == n] <- activities[n, 1]
 y[, 1] <- NULL
 
 ## 6. Now combine subject, y, and x into the har data frame.
